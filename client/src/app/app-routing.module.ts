@@ -14,7 +14,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: UserTableComponent },
       { path: 'user-table', component: UserTableComponent },
-      { path: 'album-table', component: AlbumTableComponent },
+      { path: 'album-table/:idUser', component: AlbumTableComponent },
       { path: 'photo-table', component: PhotoTableComponent }
     ]
   },

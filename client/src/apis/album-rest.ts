@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,8 @@ export class AlbumRest {
 
   private domain = 'https://jsonplaceholder.typicode.com';
 
-  public getAlbums() {
-    const url = `${this.domain}/albums`;
+  public getUserAlbums(idUser: number): Observable<any[]> {
+    const url = `${this.domain}/albums?userId=${idUser}`;
     return this.http.get<any[]>(url);
   }
 

@@ -1,6 +1,7 @@
 /* ===== Angular components ===== */
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 /* ===== Our components ===== */
 import { User } from '../../components/models/user';
 import { UserRest } from "../../apis/user-rest";
@@ -22,7 +23,7 @@ export class UserTableComponent implements OnInit {
   private userRestApi = new UserRest(this.http);
   private userModel = new User();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   /*========================================================================================*/
   /* ===== Initializer functions ===== */
@@ -58,8 +59,9 @@ export class UserTableComponent implements OnInit {
 
   // If no rows are present, show the user a short message about this.
   public onRowClicked(): void {
-    const selectedRow = this.userTable.gridOptions.api.getSelectedRows();
-    console.log(selectedRow);
+    const selectedRow: User[] = this.userTable.gridOptions.api.getSelectedRows();
+    //console.log(selectedRow);
+    this.router.navigate(["../album-table", selectedRow[0].id]);
   }
 
 }
