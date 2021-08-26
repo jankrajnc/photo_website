@@ -1,5 +1,9 @@
+/* ===== Angular components ===== */
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+/* ===== Our components ===== */
+import { User } from '../components/models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +15,9 @@ export class UserRest {
 
   private domain = 'https://jsonplaceholder.typicode.com';
 
-  public getUsers() {
+  public getUsers(): Observable<User[]> {
     const url = `${this.domain}/users`;
-    return this.http.get<any[]>(url);
+    return this.http.get<User[]>(url);
   }
 
 }

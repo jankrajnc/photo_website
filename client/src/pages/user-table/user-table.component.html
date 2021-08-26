@@ -1,1 +1,9 @@
-<p>user-table works!</p>
+<div class="pageContainer">
+
+    <div class="tableContainer">
+        <ag-grid-angular #userTable class="ag-theme-balham" [columnDefs]="columnDefinitions" [rowData]="userData"
+            [rowSelection]="'single'" [animateRows]="true" (modelUpdated)="onModelUpdated()" (rowClicked)="onRowClicked()">
+        </ag-grid-angular>
+    </div>
+
+</div>
