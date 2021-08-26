@@ -1,4 +1,4 @@
-import { ImageRendererComponent } from '../image-renderer.component';
+import { ThumbnailRendererComponent } from '../table-renderers/thumbnail-renderer.component';
 
 export class User {
 
@@ -52,7 +52,7 @@ export class User {
             headerName: 'Photo',
             autoHeight: true,
             resizable: true,
-            cellRendererFramework: ImageRendererComponent
+            cellRendererFramework: ThumbnailRendererComponent
         }
     ];
 

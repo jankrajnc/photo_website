@@ -16,7 +16,7 @@ export class AlbumRest {
   private domain = 'https://jsonplaceholder.typicode.com';
 
   public getUserAlbums(idUser: number): Observable<Album[]> {
-    // We get only the albums of a specified user.
+    // We only get the albums of a specified user.
     const url = `${this.domain}/albums?userId=${idUser}`;
     return this.http.get<Album[]>(url);
   }

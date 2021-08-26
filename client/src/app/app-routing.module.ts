@@ -15,7 +15,7 @@ const routes: Routes = [
       { path: 'home', component: UserTableComponent },
       { path: 'user-table', component: UserTableComponent },
       { path: 'album-table/:idUser', component: AlbumTableComponent },
-      { path: 'photo-table', component: PhotoTableComponent }
+      { path: 'photo-table/:idAlbum', component: PhotoTableComponent }
     ]
   },
 

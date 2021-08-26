@@ -1,3 +1,4 @@
+/* ===== Angular components ===== */
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -48,7 +49,6 @@ export class AlbumTableComponent implements OnInit {
         this.albumTable.api.sizeColumnsToFit();
       });
     });
-
   }
 
   // If no rows are present, show the user a short message about this.
@@ -65,8 +65,7 @@ export class AlbumTableComponent implements OnInit {
   public onRowClicked(): void {
     const selectedRow: Album[] = this.albumTable.gridOptions.api.getSelectedRows();
     console.log(selectedRow);
-    //this.router.navigate(["../photo-table", selectedRow[0].id]);
+    this.router.navigate(["../photo-table", selectedRow[0].id]);
   }
-
 
 }

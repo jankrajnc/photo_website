@@ -1,19 +1,23 @@
-import { ThumbnailRendererComponent } from '../table-renderers/thumbnail-renderer.component';
+import { ImageRendererComponent } from '../table-renderers/image-renderer.component';
 
-export class Album {
+export class Photo {
 
     id!: number | null;
-    userId!: number | null;
+    albumId!: number | null;
     title!: string | null;
+    url!: string | null;
+    thumbnailUrl!: string | null;
 
     constructor() {
         this.id = null;
-        this.userId = null;
+        this.albumId = null;
         this.title = null;
+        this.url = null;
+        this.thumbnailUrl = null;
     }
 
     // Column definitions need to be set for the ag-grid table.
-    private albumColumnDefinitions = [
+    private photoColumnDefinitions = [
         {
             headerName: "Title",
             field: "title",
@@ -24,13 +28,13 @@ export class Album {
             headerName: 'Photo 1',
             autoHeight: true,
             resizable: true,
-            cellRendererFramework: ThumbnailRendererComponent
+            cellRendererFramework: ImageRendererComponent
         }
     ];
 
     // Returns the column definitions.
-    public getAlbumColumnDefinitions() {
-        return this.albumColumnDefinitions;
+    public getPhotoColumnDefinitions() {
+        return this.photoColumnDefinitions;
     }
 
 }

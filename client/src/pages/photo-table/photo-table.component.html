@@ -1,1 +1,9 @@
-<p>photo-table works!</p>
+<div class="pageContainer">
+
+    <div class="tableContainer">
+        <ag-grid-angular #photoTable class="ag-theme-balham" [columnDefs]="columnDefinitions" [rowData]="photoData"
+            [rowSelection]="'single'" [animateRows]="true" (modelUpdated)="onModelUpdated()" (rowClicked)="onRowClicked()">
+        </ag-grid-angular>
+    </div>
+
+</div>

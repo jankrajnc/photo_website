@@ -3,12 +3,12 @@ import { ICellRendererAngularComp } from 'ag-grid-angular';
 
 // The HTML code is written here directly, as it's so short and simple that it does not justify a separate file.
 @Component({
-  selector: 'image-renderer',
+  selector: 'thumbnail-renderer',
   template: `<img width="50" height="50" src=\"https://via.placeholder.com/150/92c952\" style="border:2px solid black" >`
   //template: `<img border="0" width="50" height="50" src=\"{{ params.value }}\">`
 })
 
-export class ImageRendererComponent implements ICellRendererAngularComp {
+export class ThumbnailRendererComponent implements ICellRendererAngularComp {
 
   private params: any;
 
