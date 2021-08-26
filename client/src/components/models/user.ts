@@ -1,3 +1,5 @@
+import { ImageRendererComponent } from '../image-renderer.component';
+
 export class User {
 
     id!: number | null;
@@ -46,12 +48,12 @@ export class User {
             resizable: true,
             sortable: true
         },
-        /*{
+        {
             headerName: 'Photo',
-            width: 125,
+            autoHeight: true,
             resizable: true,
-            cellRendererFramework: CarTableActions
-        }*/
+            cellRendererFramework: ImageRendererComponent
+        }
     ];
 
     // Returns the column definitions.
