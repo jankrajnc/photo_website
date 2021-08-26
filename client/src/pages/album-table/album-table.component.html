@@ -1,1 +1,9 @@
-<p>album-table works!</p>
+<div class="pageContainer">
+
+    <div class="tableContainer">
+        <ag-grid-angular #albumTable class="ag-theme-balham" [columnDefs]="columnDefinitions" [rowData]="albumData"
+            [rowSelection]="'single'" [animateRows]="true" (modelUpdated)="onModelUpdated()" (rowClicked)="onRowClicked()">
+        </ag-grid-angular>
+    </div>
+
+</div>
