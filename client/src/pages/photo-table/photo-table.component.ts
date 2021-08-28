@@ -8,6 +8,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { Photo } from '../../components/models/photo';
 import { PhotoRest } from "../../apis/photo-rest";
 import { ImageModalComponent } from '../../components/modal-windows/image-modal.component';
+import { DataExtensionUtil } from "../../utils/data-extension-util";
 
 @Component({
   selector: 'app-photo-table',
@@ -25,6 +26,8 @@ export class PhotoTableComponent implements OnInit {
   private photoRestApi = new PhotoRest(this.http);
   private photoModel = new Photo();
   private modalRef!: BsModalRef;
+  private dataExtensionUtil = new DataExtensionUtil(this.http);
+  
 
   constructor(private http: HttpClient, private activatedRouter: ActivatedRoute, private modalService?: BsModalService) { }
 
@@ -48,7 +51,7 @@ export class PhotoTableComponent implements OnInit {
     this.activatedRouter.params.subscribe((params: any) => {
       const id = params['idAlbum'];
       this.photoRestApi.getAlbumPhotos(id).subscribe((data: Photo[]) => {
-        console.log(data);
+        //console.log(data);
         this.photoData = data;
         this.photoTable.api.sizeColumnsToFit();
       });
@@ -85,8 +88,9 @@ export class PhotoTableComponent implements OnInit {
   // If no rows are present, show the user a short message about this.
   public onRowClicked(): void {
     const selectedRow: Photo[] = this.photoTable.gridOptions.api.getSelectedRows();
-    console.log(selectedRow);
-    this.showPhotoModal(selectedRow[0]);
+    //console.log(selectedRow);
+    const extendedPhoto = this.dataExtensionUtil.generateExtendedPhotoData(selectedRow[0]);
+    this.showPhotoModal(extendedPhoto);
   }
 
 

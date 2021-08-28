@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 /* ===== Our components ===== */
 import { User } from '../../components/models/user';
 import { UserRest } from "../../apis/user-rest";
+import { DataExtensionUtil } from "../../utils/data-extension-util";
 
 @Component({
   selector: 'app-user-table',
@@ -22,6 +23,7 @@ export class UserTableComponent implements OnInit {
   public columnDefinitions: any;
   private userRestApi = new UserRest(this.http);
   private userModel = new User();
+  private dataExtensionUtil = new DataExtensionUtil(this.http);
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -42,7 +44,7 @@ export class UserTableComponent implements OnInit {
   // Gets data from the API and sets it.
   public setUserData(): void {
     this.userRestApi.getUsers().subscribe((data: User[]) => {
-      this.userData = data;
+      this.userData = this.dataExtensionUtil.generateExtendedUserData(data);;
       this.userTable.api.sizeColumnsToFit();
     });
   }

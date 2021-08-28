@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 /* ===== Our components ===== */
 import { Album } from '../../components/models/album';
 import { AlbumRest } from "../../apis/album-rest";
+import { DataExtensionUtil } from "../../utils/data-extension-util";
 
 @Component({
   selector: 'app-album-table',
@@ -21,6 +22,7 @@ export class AlbumTableComponent implements OnInit {
   public columnDefinitions: any;
   private albumRestApi = new AlbumRest(this.http);
   private albumModel = new Album();
+  private dataExtensionUtil = new DataExtensionUtil(this.http);
 
   constructor(private http: HttpClient, private router: Router, private activatedRouter: ActivatedRoute) { }
 
@@ -45,7 +47,7 @@ export class AlbumTableComponent implements OnInit {
       const id = params['idUser'];
       this.albumRestApi.getUserAlbums(id).subscribe((data: Album[]) => {
         //console.log(data);
-        this.albumData = data;
+        this.albumData = this.dataExtensionUtil.generateExtendedAlbumData(data);
         this.albumTable.api.sizeColumnsToFit();
       });
     });
@@ -64,7 +66,7 @@ export class AlbumTableComponent implements OnInit {
   // If no rows are present, show the user a short message about this.
   public onRowClicked(): void {
     const selectedRow: Album[] = this.albumTable.gridOptions.api.getSelectedRows();
-    console.log(selectedRow);
+    //console.log(selectedRow);
     this.router.navigate(["../photo-table", selectedRow[0].id]);
   }
 
