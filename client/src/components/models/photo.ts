@@ -7,6 +7,8 @@ export class Photo {
     title!: string | null;
     url!: string | null;
     thumbnailUrl!: string | null;
+    albumTitle?: string | null;
+    userName?: string | null;
 
     constructor() {
         this.id = null;
@@ -19,16 +21,10 @@ export class Photo {
     // Column definitions need to be set for the ag-grid table.
     private photoColumnDefinitions = [
         {
-            headerName: "Title",
-            field: "title",
-            resizable: true,
-            sortable: true
-        },
-        {
-            headerName: 'Photo 1',
+            headerName: 'Photo',
             autoHeight: true,
             resizable: true,
-            cellRendererFramework: ImageRendererComponent
+            cellRendererFramework: ImageRendererComponent,
         }
     ];
 

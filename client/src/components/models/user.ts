@@ -1,4 +1,5 @@
 import { ThumbnailRendererComponent } from '../table-renderers/thumbnail-renderer.component';
+import { Photo } from './photo';
 
 export class User {
 
@@ -10,6 +11,7 @@ export class User {
     phone!: string | null;
     website!: string | null;
     company!: object | null;
+    photos?: Photo[];
 
     constructor() {
         this.id = null;
