@@ -1,0 +1,19 @@
+<div class="alert-box">
+  <div class="modal-header">
+    <h4 class="modal-title">Photo</h4>
+    <button type="button" class="btn-close btn-sm" aria-label="Close" (click)="modalRef.hide()"></button>
+  </div>
+  <div class="modal-body">
+    <div class="card">
+      <img src="{{this.photoData['url']}}" class="card-img-top" (click)="showPhotoDetails()">
+      <div class="card-body">
+        <p class="card-text">{{this.photoData['title']}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer justify-content-center">
+    <button type="button" class="btn btn-primary" (click)="showPhotoDetails()">Details</button>
+    <button type="button" class="btn btn-primary" (click)="modalRef.hide()">Close</button>
+  </div>
+
+</div>
