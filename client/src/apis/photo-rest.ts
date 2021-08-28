@@ -11,13 +11,19 @@ import { Photo } from '../components/models/photo';
 
 export class PhotoRest {
 
-  constructor(public http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   private domain = 'https://jsonplaceholder.typicode.com';
 
+    // Get only the photos of a specified album.
   public getAlbumPhotos(idAlbum: number): Observable<Photo[]> {
-    // We only get the photos of a specified album.
     const url = `${this.domain}/photos?albumId=${idAlbum}`;
+    return this.http.get<Photo[]>(url);
+  }
+
+  // Get all photos.
+  public getPhotos(): Observable<Photo[]> {
+    const url = `${this.domain}/photos`;
     return this.http.get<Photo[]>(url);
   }
 

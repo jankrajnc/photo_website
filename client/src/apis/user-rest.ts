@@ -11,13 +11,20 @@ import { User } from '../components/models/user';
 
 export class UserRest {
 
-  constructor(public http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   private domain = 'https://jsonplaceholder.typicode.com';
 
+  // Gets all users.
   public getUsers(): Observable<User[]> {
     const url = `${this.domain}/users`;
     return this.http.get<User[]>(url);
+  }
+
+  // Gets one user based on the ID.
+  public getUser(idUser: any): Observable<User> {
+    const url = `${this.domain}/users/${idUser}`;
+    return this.http.get<User>(url);
   }
 
 }

@@ -11,14 +11,26 @@ import { Album } from '../components/models/album';
 
 export class AlbumRest {
 
-  constructor(public http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   private domain = 'https://jsonplaceholder.typicode.com';
 
+  // Get only the albums of a specified user.
   public getUserAlbums(idUser: number): Observable<Album[]> {
-    // We only get the albums of a specified user.
     const url = `${this.domain}/albums?userId=${idUser}`;
     return this.http.get<Album[]>(url);
+  }
+
+  // Returns all the albums.
+  public getAlbums(): Observable<Album[]> {
+    const url = `${this.domain}/albums`;
+    return this.http.get<Album[]>(url);
+  }
+
+  // Returns one album based on the ID.
+  public getAlbum(idAlbum: any): Observable<Album> {
+    const url = `${this.domain}/albums/${idAlbum}`;
+    return this.http.get<Album>(url);
   }
 
 }
