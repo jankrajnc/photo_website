@@ -5,9 +5,14 @@
   </div>
   <div class="modal-body">
     <div class="card">
-      <img src="{{this.photoData['url']}}" class="card-img-top" (click)="showPhotoDetails()">
+      <img [src]="this.photoData['url']" class="card-img-top" (click)="showPhotoDetails()">
       <div class="card-body">
-        <p class="card-text">{{this.photoData['title']}}</p>
+        <p *ngIf="!showDetails" class="card-text">{{this.photoData['title']}}</p>
+        <div *ngIf="showDetails" class="card-text">
+          <p><strong>Photo title:</strong> {{this.photoData['title']}}</p>
+          <p><strong>Album title:</strong> {{this.photoData['albumTitle']}}</p>
+          <p><strong>User:</strong> {{this.photoData['userName']}}</p>
+        </div>
       </div>
     </div>
   </div>

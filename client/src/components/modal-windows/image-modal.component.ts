@@ -9,6 +9,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 export class ImageModalComponent {
 
     public photoData!: any;
+    public showDetails = false;
 
     constructor(public modalRef: BsModalRef) {}
 
@@ -17,7 +18,7 @@ export class ImageModalComponent {
     }
 
     public showPhotoDetails() {
-        this.modalRef.hide();
+        this.showDetails = !this.showDetails;
     }
 
 }

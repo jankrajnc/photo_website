@@ -89,8 +89,9 @@ export class PhotoTableComponent implements OnInit {
   public onRowClicked(): void {
     const selectedRow: Photo[] = this.photoTable.gridOptions.api.getSelectedRows();
     //console.log(selectedRow);
-    const extendedPhoto = this.dataExtensionUtil.generateExtendedPhotoData(selectedRow[0]);
-    this.showPhotoModal(extendedPhoto);
+    const extendedPhotoObject = this.dataExtensionUtil.generateExtendedPhotoData(selectedRow[0]);
+    //console.log(extendedPhotoObject);
+    this.showPhotoModal(extendedPhotoObject);
   }
 
 
