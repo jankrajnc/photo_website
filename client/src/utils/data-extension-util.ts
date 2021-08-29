@@ -59,7 +59,6 @@ export class DataExtensionUtil {
             //console.log(albumArray);
             return albumArray;
         });
-        // TODO: Deal with this properly.
         return albumArray;
     }
 

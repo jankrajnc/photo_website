@@ -24,7 +24,7 @@ export class Photo {
             headerName: 'Photo',
             autoHeight: true,
             resizable: true,
-            cellRendererFramework: ImageRendererComponent,
+            cellRendererFramework: ImageRendererComponent
         }
     ];
 
