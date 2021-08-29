@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { AlbumTableComponent } from './album-table.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('AlbumTableComponent', () => {
   let component: AlbumTableComponent;
@@ -8,6 +9,7 @@ describe('AlbumTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule, RouterTestingModule],
       declarations: [ AlbumTableComponent ]
     })
     .compileComponents();
@@ -22,4 +24,5 @@ describe('AlbumTableComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
 });

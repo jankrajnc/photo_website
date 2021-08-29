@@ -44,7 +44,7 @@ export class UserTableComponent implements OnInit {
   // Gets data from the API and sets it.
   public setUserData(): void {
     this.userRestApi.getUsers().subscribe((data: User[]) => {
-      this.userData = this.dataExtensionUtil.generateExtendedUserData(data);;
+      this.userData = this.dataExtensionUtil.generateExtendedUserData(data);
       this.userTable.api.sizeColumnsToFit();
     });
   }
