@@ -1,17 +1,37 @@
-<!-- Navigation bar -->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <!-- Brand -->
-  <a class="navbar-brand py-0 d-inline-block align-center" href="./home">
-    Beenius
-  </a>
-  <!-- Links left side -->
-  <ul class="navbar-nav me-auto">
-    <li class="nav-item">
-      <a class="nav-link" href="./user-table">
-        <span class="bi bi-person-badge"></span>
-      </a>
-    </li>
-  </ul>
-</nav>
+<!-- Hidden navbar -->
+<div class="collapse" id="navbarContent">
+  <div class="collapseChild bg-dark p-4">
+    <a class="navbar-brand py-0 d-inline-block align-center" href="./user-table">
+      Photo website
+    </a>
+    <a class="nav-link" href="./user-table">
+      Users
+      <span class="bi bi-person-lines-fill"></span>
+    </a>
+  </div>
+</div>
+
+<div>
+  <!-- Collapse button -->
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navbar">
+        <span class="bi bi-arrows-expand"></span>
+      </button>
+    </div>
+  </nav>
+</div>
+
+<!-- Breadcrumbs 
+<div class="breadcrumb-container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item"><a href="#">Library</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Data</li>
+    </ol>
+  </nav>
+</div>-->
 
 <router-outlet></router-outlet>

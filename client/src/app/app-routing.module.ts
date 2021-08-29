@@ -11,15 +11,14 @@ const routes: Routes = [
     path: '',
     component: MainLayoutComponent,
     children: [
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', component: UserTableComponent },
+      { path: '', redirectTo: 'user-table', pathMatch: 'full' },
       { path: 'user-table', component: UserTableComponent },
       { path: 'album-table/:idUser', component: AlbumTableComponent },
       { path: 'photo-table/:idAlbum', component: PhotoTableComponent }
     ]
   },
 
-  { path: '**', redirectTo: 'home' }
+  { path: '**', redirectTo: 'user-table' }
 
 ];
 

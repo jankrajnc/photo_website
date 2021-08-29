@@ -1,0 +1,15 @@
+div.collapseChild > a{
+    color: whitesmoke;
+    text-decoration: inherit;
+}
+
+.breadcrumb-container{
+    margin-left: 10px;
+}
+
+.breadcrumb > li + li:before {
+    color: black;
+    content: "> ";
+}
+
+
