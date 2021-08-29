@@ -11,7 +11,6 @@ import { ICellRendererAngularComp } from 'ag-grid-angular';
 export class ThumbnailRendererComponent implements ICellRendererAngularComp {
 
   public params: any;
-  public usedPhotoUrl!: string;
 
   constructor() { }
 

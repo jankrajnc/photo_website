@@ -8,7 +8,9 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 
 export class ImageModalComponent {
 
+    // Data which gets loaded in HTML.
     public photoData!: any;
+    // Used to toggle between showing details or not.
     public showDetails = false;
 
     constructor(public modalRef: BsModalRef) {}

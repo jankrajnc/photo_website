@@ -72,7 +72,7 @@ export class PhotoTableComponent implements OnInit {
   /* ===== General functions ===== */
   /*========================================================================================*/
 
-  // Shows the information type modal window. We can set the type of the content by providing the correct arguments.
+  // Shows the photo modal window.
   public showPhotoModal(photoData: Photo): void {
     try {
       this.modalRef = this.modalService!.show(ImageModalComponent, { keyboard: true, initialState: { photoData: photoData } });
@@ -85,7 +85,7 @@ export class PhotoTableComponent implements OnInit {
   /* ===== Button functions ===== */
   /*========================================================================================*/
 
-  // If no rows are present, show the user a short message about this.
+  // Event when the user clicks on a row.
   public onRowClicked(): void {
     const selectedRow: Photo[] = this.photoTable.gridOptions.api.getSelectedRows();
     //console.log(selectedRow);

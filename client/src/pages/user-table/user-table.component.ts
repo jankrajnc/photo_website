@@ -59,7 +59,7 @@ export class UserTableComponent implements OnInit {
     }
   }
 
-  // If no rows are present, show the user a short message about this.
+  // Event when the user clicks on a row.
   public onRowClicked(): void {
     const selectedRow: User[] = this.userTable.gridOptions.api.getSelectedRows();
     //console.log(selectedRow);
