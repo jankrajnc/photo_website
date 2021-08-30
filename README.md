@@ -1,17 +1,17 @@
 #### Overview:
-    A front-end only photo website as a test execise for Beenius.
+  A front-end only photo website as a test execise for Beenius.
 
 #### Description:
-    The website is based on photos, which are "nested" as user > album > photo. At the top layer we have a list of users, each user has albums and each album has photos. These objects are accessed by referencing ID of the previous object. The way this website was envisioned only GET functions were required and used. While the website is straightforward effort was put into connecting all these object and showcasing the right data. 
+  The website is based on photos, which are "nested" as user > album > photo. At the top layer we have a list of users, each user has albums and each album has photos. These objects are accessed by referencing ID of the previous object. The way this website was envisioned only GET functions were required and used. While the website is straightforward effort was put into connecting all these object and showcasing the right data. 
 
 #### Folder structure:
-    - **apis:** Anything to do with APIs, in our case (and in most cases) only REST calls are contained here.
-    - **app:** Mostly automatically generated; holds routing and connects components to the application. 
-    - **assets:** Stores images, fonts, etc. NOT USED
-    - **components:** Various components used thoughout the application, like layout, modal windows, models, etc.
-    - **environments:** Some enviroment variables and functions. NOT USED.
-    - **pages:** The actual pages which given their own URLs in the routing module. These are standalone pages, while components are just inserted at certain places as additions.
-    - **utils:** Utility/helper functions which are used at several locations of the application or justify being separated.
+  - **apis:** Anything to do with APIs, in our case (and in most cases) only REST calls are contained here.
+  - **app:** Mostly automatically generated; holds routing and connects components to the application. 
+  - **assets:** Stores images, fonts, etc. NOT USED
+  - **components:** Various components used thoughout the application, like layout, modal windows, models, etc.
+  - **environments:** Some enviroment variables and functions. NOT USED.
+  - **pages:** The actual pages which given their own URLs in the routing module. These are standalone pages, while components are just inserted at certain places as additions.
+  - **utils:** Utility/helper functions which are used at several locations of the application or justify being separated.
 
 #### Functionality:
   - **Routes:**
