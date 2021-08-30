@@ -23,15 +23,19 @@
   </nav>
 </div>
 
-<!-- Breadcrumbs 
+<!-- Breadcrumbs -->
 <div class="breadcrumb-container">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="#">Home</a></li>
-      <li class="breadcrumb-item"><a href="#">Library</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Data</li>
+      <!-- Loop through the breadcrumb array, setting the last element as a separate variable. -->
+      <li *ngFor="let breadcrumb of breadcrumbData; let last = last;" class="breadcrumb-item">
+        <!-- If the element isn't last we set it as a link. -->
+        <a *ngIf="!last" href="{{breadcrumb['url']}}">{{breadcrumb['title']}}</a>
+        <!-- If the element is last we set it as text. -->
+        <span *ngIf="last" class="lastElement">{{breadcrumb['title']}}</span>
+      </li>
     </ol>
   </nav>
-</div>-->
+</div>
 
 <router-outlet></router-outlet>
