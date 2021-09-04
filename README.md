@@ -33,6 +33,7 @@
   - Client side tests => most of my testing experience is from the back-end and is lacking on the front-end, furthermore Angulars' way of testing is complicated and the available resources aren't the best, it would make sense to go through a concrete testing course. As of now I haven't done proper testing for this application as I would need to use more time to go through it properly.
   - Breadcrumbs => First time implementing breadcrumbs, and the current system is not optimal, should be replaced by a better one, but requires a little extra time.
   - Visual impovements => several things in the application could be improved to look better, but wouldn't change the functionality.
+  - Caching => Add caching for the images by using service workers.
   
 #### License
 Proprietary software, please view LICENSE.md.
